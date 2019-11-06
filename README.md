@@ -1,6 +1,15 @@
-#Algoritmos de ordenamiento
+# Algoritmos de ordenamiento
 
-##Burbuja
+La ordenación o clasificación de datos (sort, en inglés) es una operación consistente en disponer
+un conjunto —estructura— de datos en algún determinado orden con respecto a uno de los
+campos de los elementos del conjunto. Por ejemplo, cada elemento del conjunto de datos de una
+guía telefónica tiene un campo nombre, un campo dirección y un campo número de teléfono;
+la guía telefónica está dispuesta en orden alfabético de nombres. Los elementos numéricos se
+pueden ordenar en orden creciente o decreciente de acuerdo al valor numérico del elemento. En
+terminología de ordenación, el elemento por el cual está ordenado un conjunto de datos (o se está
+buscando) se denomina clave.
+
+## Burbuja
 
 La idea detrás del algoritmo de clasificación de burbujas es muy simple. Dada una lista desordenada, 
 se comparan los elementos adyacentes en la lista y, después de cada comparación, colóquelos a la derecha 
@@ -15,7 +24,7 @@ Ejemplo:
 
 ![BubbleSort-example](https://upload.wikimedia.org/wikipedia/commons/0/06/Bubble-sort.gif)
 
-##Quicksort
+## Quicksort
 
 El algoritmo conocido como *quicksort* (ordenación rápida) recibe su nombre de su autor, Tony
 Hoare. La idea del algoritmo es simple, se basa en la división en particiones de la lista a ordenar,
@@ -51,7 +60,7 @@ Ejemplo:
 ![quicksort-example](https://upload.wikimedia.org/wikipedia/commons/9/9c/Quicksort-example.gif)
 
 
-##Shell
+## Shell
 
 La ordenación *Shell* debe el nombre a su inventor, D. L. Shell. Se suele denominar también
 ordenación por inserción con incrementos decrecientes. Se considera que el método *Shell* es una
