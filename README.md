@@ -1,17 +1,29 @@
-**Algoritmos de ordenamiento**
+#Algoritmos de ordenamiento
 
-_Burbuja_: El algoritmo de ordenación tal vez más sencillo sea el la burbuja, que ordena
-los elementos de una lista en orden ascendente. El algoritmo se basa en la lectura sucesiva de
-la lista a ordenar, comparando el elemento inferior de la lista con los restantes y efectuando un
-intercambio de posiciones cuando el orden resultante de la comparación no sea el correcto.
+##Burbuja
 
-_Quicksort_: El algoritmo conocido como quicksort (ordenación rápida) recibe su nombre de su autor, Tony
+La idea detrás del algoritmo de clasificación de burbujas es muy simple. Dada una lista desordenada, 
+se comparan los elementos adyacentes en la lista y, después de cada comparación, colóquelos a la derecha 
+en orden de magnitud. Esto funciona intercambiando elementos adyacentes si no están en el correcto orden. 
+El proceso se repite *n-1* veces para obtener una lista de *n* elementos. En cada iteración, el elemento más 
+grande está dispuesto al final. Por ejemplo, en la primera iteración, el elemento más grande se colocaría en 
+la última posición de la lista, y nuevamente, se seguirá el mismo proceso para los restantes elementos *n-1*. 
+En la segunda iteración, el segundo elemento más grande será colocado en el penúltimo lugar de la lista, y el 
+proceso se repetirá hasta que la lista se ordene.
+
+Ejemplo:
+
+![BubbleSort-example](https://upload.wikimedia.org/wikipedia/commons/0/06/Bubble-sort.gif)
+
+##Quicksort
+
+El algoritmo conocido como *quicksort* (ordenación rápida) recibe su nombre de su autor, Tony
 Hoare. La idea del algoritmo es simple, se basa en la división en particiones de la lista a ordenar,
 por ello se puede considerar que aplica la técnica "divide y vencerás". El método es, posiblemente,
 el más pequeño de código, más rápido, más elegante y más interesante y eficiente de
 los algoritmos conocidos de ordenación.
 
-Este método se basa en dividir los n elementos de la lista a ordenar en dos partes o particiones
+Este método se basa en dividir los *n* elementos de la lista a ordenar en dos partes o particiones
 separadas por un elemento: una partición izquierda, un elemento central denominado pivote
 o elemento de partición y una partición derecha. La partición o división se hace de tal forma
 que todos los elementos de la primera sublista (partición izquierda) sean menores que todos
@@ -34,15 +46,33 @@ La lista final ordenada se consigue concatenando la primera sublista, el pivote 
 en ese orden, en una única lista. La primera etapa de quicksort es la división o “particionado”
 recursivo de la lista hasta que todas las sublistas constan de sólo un elemento.
 
-_Shell_: La ordenación Shell debe el nombre a su inventor, D. L. Shell. Se suele denominar también
-ordenación por inserción con incrementos decrecientes. Se considera que el método Shell es una
+Ejemplo:
+
+![quicksort-example](https://upload.wikimedia.org/wikipedia/commons/9/9c/Quicksort-example.gif)
+
+
+##Shell
+
+La ordenación *Shell* debe el nombre a su inventor, D. L. Shell. Se suele denominar también
+ordenación por inserción con incrementos decrecientes. Se considera que el método *Shell* es una
 mejora del método de inserción directa.
 
 En el algoritmo de inserción, cada elemento se compara con los elementos contiguos de su
 izquierda, uno tras otro. Si el elemento a insertar es el mas pequeño, hay que realizar muchas
 comparaciones antes de colocarlo en su lugar definitivo.
 
-El algoritmo de Shell modifica los saltos contiguos resultantes de las comparaciones por
+El algoritmo de *Shell* modifica los saltos contiguos resultantes de las comparaciones por
 saltos de mayor tamaño, y con ello se consigue que la ordenación sea más rápida. Generalmente,
 se toma como salto inicial n/2 (siendo n el número de elementos), y luego se reduce el salto a la
 mitad en cada repetición hasta que sea de tamaño 1.
+
+Ejemplo:
+
+![shellsort-example](https://i.makeagif.com/media/8-25-2016/mKGEkd.gif)
+
+Fuente:
+
+Baka, B. (2017). Python Data Structures and Algorithms. Birmingham, Reino Unido: Packtpub.
+
+Joyanes-Aguilar, L., & Zahonero-Martinez, I. (2008). Estructuras de datos en Java. Madrid, España: McGraw-Hill.
+
