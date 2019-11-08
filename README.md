@@ -9,6 +9,8 @@ pueden ordenar en orden creciente o decreciente de acuerdo al valor numérico de
 terminología de ordenación, el elemento por el cual está ordenado un conjunto de datos (o se está
 buscando) se denomina clave.
 
+![ComplejidadAlgoritmosOrdenacion](http://www.leonet.mx/imagenes/complejidad_algoritmos_ordenamiento.png)
+
 ## Burbuja
 
 La idea detrás del algoritmo de clasificación de burbujas es muy simple. Dada una lista desordenada, 
@@ -19,6 +21,22 @@ grande está dispuesto al final. Por ejemplo, en la primera iteración, el eleme
 la última posición de la lista, y nuevamente, se seguirá el mismo proceso para los restantes elementos *n-1*. 
 En la segunda iteración, el segundo elemento más grande será colocado en el penúltimo lugar de la lista, y el 
 proceso se repetirá hasta que la lista se ordene.
+
+Pseudocodigo:
+
+```
+bubbleSort(A, n)
+    Para i=1 hasta n -1
+        Para j=0 hasta i < n -2
+            Si (a[j]>a[j+1]) entonces
+                tmp=a[j]
+                a[j]=a[j+1]
+                a[j+1]=tmp
+            Fin Si
+        Fin Para
+    Fin Para
+Fin bubbleSort
+```
 
 Ejemplo:
 
@@ -55,6 +73,47 @@ La lista final ordenada se consigue concatenando la primera sublista, el pivote 
 en ese orden, en una única lista. La primera etapa de quicksort es la división o “particionado”
 recursivo de la lista hasta que todas las sublistas constan de sólo un elemento.
 
+Algoritmo:
+
+```
+Inicio
+    Si lista tiene más de un elemento
+        Particionar la lista en dos sublistas (Sublista Izquierda y Sublista Derecha)
+        Aplicar el algoritmo QuickSort() a Sublist Izquierda
+        Aplicar Algoritmo QuickSort() a Sublista Derecha
+        Combinar las 2 listas ordenadas
+    Fin Si
+FIN
+```
+
+Pseudocódigo:
+
+```
+QuickSort(A,p,r)
+Inicio
+    Si p < r entonces // Si la lista tiene más de un elemento
+        q =Particionar(A,p,r)
+        QuickSort(A,p,q-1)
+        QuickSort(A,q+1,r)
+    Fin Si
+Fin
+
+Particionar(A,p,r)
+Inicio
+    x=A[r]
+    i=p-1
+    para j=p hasta r-1
+        Si A[j]<=x
+            i=i+1
+            intercambiar A[i] con A[j]
+        Fin Si
+    Fin para
+    intercambiar A[i+1] con A[r]
+    retornar i+1
+Fin
+```
+
+
 Ejemplo:
 
 ![quicksort-example](https://upload.wikimedia.org/wikipedia/commons/9/9c/Quicksort-example.gif)
@@ -79,9 +138,77 @@ Ejemplo:
 
 ![shellsort-example](https://i.makeagif.com/media/8-25-2016/mKGEkd.gif)
 
+## Radix Sort
+
+El método de ordenamiento *Radix Sort* también llamado ordenamiento por residuos puede utilizarse 
+cuando los valores a ordenar están compuestos por secuencias de letras o dígitos que admiten un 
+orden lexicográfico.
+
+El algoritmo ordena utilizando un algoritmo de ordenación estable, las letras o dígitos de forma 
+individual, partiendo desde el que está más a la derecha (menos significativo) y hasta el que se 
+encuentra más a la izquierda (el más significativo). Nota: a cada letra o dígito se le asigna una 
+llave o código representado por un número entero, el cual se utiliza para el ordenamiento de cada 
+elemento que conforma el valor original.
+
+Por ejemplo, se planea que una línea aérea proporciona números de confirmación diseñados con cadenas 
+formadas con 2 caracteres donde cada carácter es un digito o una letra que puede tomar 36 valores 
+(26 letras y 10 dígitos) y así hay 36^2 posibles códigos. 
+
+Para cada carácter de los 36 se genera un código numérico entero de 0-36.
+
+```
+carácter            código
+0 			0
+1 			1
+.
+.
+.
+.
+9 			10
+A 			11
+B 			12
+.
+.
+.
+.
+Z 			36
+```
+Si se tienen los códigos de confirmación {F6,E5,R6,X6,X2,T5,F2,T3} y se utiliza un algoritmo de ordenación 
+estable en el carácter que se encuentra más a la derecha se obtiene la lista parcialmente ordenada de 
+códigos {X2,F2,T3,E5,T5,F6,R6,X6} . Ahora si se ordena utilizando el mismo algoritmo de ordenamiento estable, 
+pero sobre el carácter que se encuentra más a la izquierda se obtiene la lista {E5,F2,F6,R6,T3,T5,X2,X6}.
+
+Procesa las letras o dígitos de forma individual partiendo desde el digito menos significativo y hasta 
+alcanzar el digito más significativo. 
+
+Si los códigos de confirmación se forman con 6 caracteres y se tiene la lista de códigos 
+{X17FS6,PL4ZQ2,JI8FR9,XL8FQ6,PY2ZR5,KV7WS9,JL2ZV2,KI4WR2}, el ordenamiento del carácter más a la derecha 
+hacia el de más a la izquierda se muestra.
+
+![Radix](http://www.leonet.mx/imagenes/radix.png)
+
+El algoritmo en pseudocódigo del Radix Sort es:
+
+```
+RadixSort(A,d)
+Inicio
+    Para i=1 hasta i=d
+        Ordenamiento de A en el digito i
+Fin
+```
+
+Donde *A* es una lista de *n* elementos, *d* es el número de dígitos o caracteres que tienen los elementos 
+de *A*, si *i = 1* se refiere al dígito o carácter colocado más a la derecha y cuando *i = d* al que está 
+más a la izquierda. El ordenamiento se realiza con algún algoritmo estable como por ejemplo *Counting Sort*.
+
+
 Fuente:
 
 Baka, B. (2017). Python Data Structures and Algorithms. Birmingham, Reino Unido: Packtpub.
+
+Cormen, T. (2013). Algorithms Unlocked. Cambridge: IT Press.
+
+Cormen, T., Leiserson, C., Rivest, R., & Clifford, S. (2009). Introduction to Algorithms. Cambridge: The MIT Press.
 
 Joyanes-Aguilar, L., & Zahonero-Martinez, I. (2008). Estructuras de datos en Java. Madrid, España: McGraw-Hill.
 
