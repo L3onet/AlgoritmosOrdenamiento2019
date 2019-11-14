@@ -20,7 +20,7 @@ class OrdenamientoIntercalacion:
         return lista3
 
 
-a = OrdenamientoIntercalacion()
-lista2 = [2,4,6,8,10,11,12,13]
-lista1 = [1,3,5,7,9]
-print(a.Intercalar(lista1, lista2))
+#a = OrdenamientoIntercalacion()
+#lista2 = [2,4,6,8,10,11,12,13]
+#lista1 = [1,3,5,7,9]
+#print(a.Intercalar(lista1, lista2))

@@ -36,10 +36,11 @@ class Radix:
             output = self.counting_sort(output,i,radix)
         return output
 
-a = Radix()
-alist = [9,3,1,4,5,7,7,2,2]
-#print (a.counting_sort(alist,0,10))
+def main():
+    a = Radix()
+    alist = [9,3,1,4,5,7,7,2,2]
+    #print (a.counting_sort(alist,0,10))
 
-A = [9,3,1,4,5,7,7,2,20,55]
-#A = [10,1,100,8]
-print (a.radix_sort(A,10))
+    A = [9,3,1,4,5,7,7,2,20,55]
+    #A = [10,1,100,8]
+    print (a.radix_sort(A,10))

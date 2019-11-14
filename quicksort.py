@@ -28,7 +28,8 @@ class QuickSort:
         q = int((p + r) / 2)
         return self.QuickSort(A, p, r)
 
-a = [78, 67, 34, 35, 89, 56]
-print (a)
-b = QuickSort()
-print (b.ordenar(a))
+def main():
+    a = [78, 67, 34, 35, 89, 56]
+    print (a)
+    b = QuickSort()
+    print (b.ordenar(a))

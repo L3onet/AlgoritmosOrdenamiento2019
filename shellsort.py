@@ -4,7 +4,7 @@ class ShellSort:
         while sublistcount > 0:
             for start_position in range(sublistcount):
                 self.gap_InsertionSort(alist, start_position, sublistcount)
-            print("Después de incrementos de tamaño ", sublistcount, "la lista es", nlist)
+            #print("Después de incrementos de tamaño ", sublistcount, "la lista es", nlist)
             sublistcount = sublistcount // 2
         return alist
 
@@ -17,7 +17,8 @@ class ShellSort:
                 position = position - gap
             nlist[position] = current_value
 
-nlist = [14,46,43,27,57,41,45,21,70]
-b = ShellSort()
-a = b.shellSort(nlist)
-print(a)
+def main():
+    nlist = [14,46,43,27,57,41,45,21,70]
+    b = ShellSort()
+    a = b.shellSort(nlist)
+    print(a)
