@@ -202,6 +202,37 @@ de *A*, si *i = 1* se refiere al dígito o carácter colocado más a la derecha 
 más a la izquierda. El ordenamiento se realiza con algún algoritmo estable como por ejemplo *Counting Sort*.
 
 
+## Merge Sort (Mezcla directa)
+
+**Merge Sort** es un algoritmo de ordenamiento basado en el paradigma divide y vencerás o también conocido como 
+divide y conquista. Esta es una técnica de diseño de algoritmos que consiste en resolver un problema a partir 
+de la solución de sub-problemas del mismo tipo, pero de menor tamaño. Consta de tres pasos: Dividir el problema, 
+resolver cada sub-problema y combinar las soluciones obtenidas para la solución al problema original
+
+Las tres fases en este algoritmo son:
+
+**Divide**: Se divide una secuencia *A* de *n* elementos a ordenar en dos sub-secuencias de *n/2* elementos. Si la secuencia 
+se representa por un arreglo lineal, para dividirlo en 2 se encuentra un número *q* entre *p* y *r* que son los extremos 
+del arreglo o sub-arreglo. El cálculo se hace *q = | (p + r) / 2 |*.
+
+**Conquista**: Ordena las dos sub-secuencias de forma recursiva utilizando el algoritmo **MergeSort()**. El caso base o 
+término de la recursión ocurre cuando la secuencia a ser ordenada tiene solo un elemento y éste se supone ordenado.
+
+Combina: Mezcla las dos sub-secuencias ordenadas para obtener la solución.
+El algoritmo es:
+
+```
+1. Ordenar una secuencia S de elementos:
+    1. Si S tiene uno o ningún elemento, está ordenada
+    2. Si S tiene al menos dos elementos se divide en dos secuencias S1 y S2, S1 conteniendo los primeros n/2, y S2 los restantes.
+    3. Ordenar S1 y S2, aplicando recursivamente este procedimiento.
+    4. Mezclar S1 y S2 ordenadamente en S
+2. Mezclar dos secuencias ordenadas S1 y S2 en S:
+    1. Se tienen referencias al principio de cada una de las secuencias a mezclar (S1 y S2).
+    2. Mientras en alguna secuencia queden elementos, se inserta en la secuencia resultante (S) el menor de los elementos referenciados y se avanza esa referencia una posición.
+```
+
+
 Fuente:
 
 Baka, B. (2017). Python Data Structures and Algorithms. Birmingham, Reino Unido: Packtpub.
