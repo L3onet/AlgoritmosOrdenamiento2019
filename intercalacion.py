@@ -19,8 +19,26 @@ class OrdenamientoIntercalacion:
                     j += 1
         return lista3
 
+    def Merge(self, listaIzq, listaDer):
+        j = k = 0
+        listaOrdenada = []
+        while (len(listaIzq) != j and len(listaDer) != k):
+            if (listaIzq[j] < listaDer[k]):
+                listaOrdenada.append(listaIzq[j])
+                j += 1
+            else:
+                listaOrdenada.append(listaDer[k])
+                k += 1
+        listaOrdenada.extend(listaIzq[j:])
+        listaOrdenada.extend(listaDer[k:])
+        return listaOrdenada
 
-#a = OrdenamientoIntercalacion()
-#lista2 = [2,4,6,8,10,11,12,13]
-#lista1 = [1,3,5,7,9]
-#print(a.Intercalar(lista1, lista2))
+
+def main():
+    a = OrdenamientoIntercalacion()
+    lista2 = [2,4,6,8,10,11,12,13]
+    lista1 = [1,3,5,7,9]
+    print(a.Merge(lista1, lista2))
+
+if __name__ == "__main__":
+    main()
