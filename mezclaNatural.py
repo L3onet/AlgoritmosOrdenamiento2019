@@ -1,11 +1,11 @@
-from MezclaDirecta import *
-class MezclaNatural:
+from intercalacion import *
 
+class MezclaNatural:
     def OrdenamientoMezclaNatural(self, lista):
         aux1 = []
         aux2 = []
         aux3 = []
-        mezcla = MezclaDirecta()
+        mezcla = OrdenamientoIntercalacion()
         izquierda = izq = 0
         derecha = len(lista) - 1
         der = derecha
@@ -30,7 +30,7 @@ class MezclaNatural:
                     else:
                         aux1.extend(aux3)
                         aux3.clear()
-                lista = mezcla.combinar(aux1, aux2)
+                lista = mezcla.Merge(aux1, aux2)
                 if len(aux2) == 0 and len(aux3) == 0:
                     ordenado = True
                     break
